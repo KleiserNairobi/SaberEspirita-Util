@@ -1,0 +1,21 @@
+{
+  "name": "saber-espirita-postgresql-scripts",
+  "version": "1.0.0",
+  "description": "Scripts de backup do Firebase e migração de dados para PostgreSQL",
+  "main": "export_firebase_backup.ts",
+  "scripts": {
+    "backup": "ts-node export_firebase_backup.ts",
+    "migrate": "ts-node migrate_json_to_postgres.ts"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "firebase-admin": "^12.0.0",
+    "pg": "^8.11.3"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.0",
+    "@types/pg": "^8.11.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.3.3"
+  }
+}

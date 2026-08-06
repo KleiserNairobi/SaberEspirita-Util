@@ -1,0 +1,16 @@
+{
+  "name": "Conversor de Imagens Local",
+  "short_name": "ConversorImg",
+  "description": "Converta imagens entre PNG, JPEG, WebP, GIF e SVG diretamente no navegador.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f2f7f2",
+  "theme_color": "#6f7c60",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}
