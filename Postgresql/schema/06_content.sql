@@ -9,7 +9,7 @@ CREATE TABLE glossary_terms (
   term VARCHAR(255) NOT NULL,
   definition TEXT NOT NULL,
   category glossary_category DEFAULT 'Doutrina Básica' NOT NULL,
-  references JSONB DEFAULT '[]'::jsonb NOT NULL,
+  "references" JSONB DEFAULT '[]'::jsonb NOT NULL,
   related_terms JSONB DEFAULT '[]'::jsonb NOT NULL,
   synonyms JSONB DEFAULT '[]'::jsonb,
   created_at TIMESTAMPTZ DEFAULT CURRENT_TIMESTAMP,

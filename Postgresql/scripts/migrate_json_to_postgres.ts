@@ -211,7 +211,7 @@ async function migrateData() {
     for (const g of glossary) {
       await client.query(
         `
-        INSERT INTO glossary_terms (id, term, definition, category, references, related_terms, synonyms, created_at)
+        INSERT INTO glossary_terms (id, term, definition, category, "references", related_terms, synonyms, created_at)
         VALUES ($1, $2, $3, $4, $5, $6, $7, $8)
         ON CONFLICT (id) DO NOTHING;
       `,
