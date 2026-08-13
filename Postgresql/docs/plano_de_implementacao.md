@@ -39,6 +39,10 @@ Postgresql/
 1. **Tipos de Chave Primária**: Como os IDs no Firebase (document IDs e UIDs de Auth) são strings alfanuméricas de tamanho variável (ex: `vw3XkL9...`), as chaves primárias e estrangeiras nas tabelas PostgreSQL foram definidas como `VARCHAR(128)` / `TEXT` para garantir 100% de compatibilidade e preservar os relacionamentos existentes sem quebra.
 2. **Campos Estruturados / JSONB**: Estruturas aninhadas com dinamismo de layout (como os `slides` das lições, as `alternatives` de questões ou dados complexos de logs) são representadas com a coluna nativa `JSONB` do PostgreSQL para máxima performance de consulta sem perder a flexibilidade do esquema original.
 3. **Script de Backup de Produção**: O script `export_firebase_backup.ts` utiliza o Firebase Admin SDK (exigindo um `serviceAccountKey.json` ou credencial de ambiente de produção) para extrair coleções raiz e subcoleções.
+4. **Paridade da API REST & Migração de Mídias (Cloudflare)**:
+   - **Objetivo da API**: A nova API REST em Spring Boot (`SaberEspirita-Back`) deve ser **100% compatível** com todas as regras de negócio, dados e comportamentos originalmente mantidos no Firebase (Firestore e Cloud Functions).
+   - **Migração do Storage**: Todos os ativos estáticos e mídias (imagens de aulas/cursos, áudios de meditações, podcasts e PDFs) armazenados no Firebase Storage serão migrados e servidos via **Cloudflare CDN / Cloudflare R2**, aproveitando a infraestrutura de distribuição já utilizada para a entrega do *hot-updater* (OTA) do aplicativo.
+
 
 ---
 

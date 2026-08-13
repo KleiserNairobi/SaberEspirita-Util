@@ -1,8 +1,13 @@
 # Estratégia de Migração Firebase para PostgreSQL em Fases
 
-Este documento descreve o processo de migração e consolidação do banco de dados relacional PostgreSQL do projeto **Saber Espírita**, garantindo 100% de integridade e fidelidade dos dados históricos durante a importação.
+Este documento descreve o processo de migração e consolidação do banco de dados relacional PostgreSQL do projeto **Saber Espírita**, garantindo 100% de integridade e fidelidade dos dados históricos durante a importação e total paridade funcional com o Firebase (Firestore, Functions e Storage).
+
+> [!NOTE]
+> **Estratégia de Arquivos e Mídias (Storage)**:
+> Os arquivos estáticos e mídias (áudios, imagens, PDFs) mantidos originalmente no Firebase Storage serão migrados para a infraestrutura **Cloudflare (R2 / CDN)**, aproveitando a rede de distribuição já estabelecida para o mecanismo de *hot-update* (OTA) do aplicativo.
 
 ---
+
 
 ## 🗺️ Por que em Fases?
 
